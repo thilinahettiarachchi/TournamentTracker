@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using TrackerLibrary1.DataAccess;
 
-namespace TrackerLibrary
+namespace TrackerLibrary1
 {
-    public static class GlobalConfig
+    public class GlobalConfig
     {
         public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
 
@@ -21,7 +24,7 @@ namespace TrackerLibrary
             if (textFiles)
             {
                 // TODO - Create the Text Connection
-                TextConnection text = new TextConnection();
+                TextConnector text = new TextConnector();
                 Connections.Add(text);
             }
         }
